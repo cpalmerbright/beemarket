@@ -15,17 +15,19 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
-        <td><%= listing.vendor %></td>
+        <td><%= listing.vendor.name  %></td>
         <td><%= listing.quantity %></td>
         <td><%= listing.species %></td>
-        <td><%= link_to 'Show', vendor_listing_path(@vendor) %></td>
-        <td><%= link_to 'Edit', edit_vendor_listing_path(@vendor, listing) %></td>
-        <td><%= link_to 'Destroy', vendor_listing_path(@vendor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vendor_listing_path(listing.vendor, listing) %></td>
+        <td><%= link_to 'Edit', edit_vendor_listing_path(listing.vendor, listing) %></td>
+        <td><%= link_to 'Destroy', vendor_listing_path(listing.vendor, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if @vendor %>
 <%= link_to 'New Listing', new_vendor_listing_path(@vendor) %>
+<% end %>
+<%= link_to 'View Vendors', vendors_path %>

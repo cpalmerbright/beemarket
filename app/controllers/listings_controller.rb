@@ -11,7 +11,12 @@ class ListingsController < ApplicationController
   # end
 
   def index
-    @listings = Listing.all
+    if @vendor.nil?
+      @listings = Listing.all
+    else
+      @listings = @vendor.listings
+    end
+
   end
 
   # GET /listings/1
@@ -21,7 +26,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/new
   def new
-    @listing = Listing.new
+    @listing = @vendor.listings.new
   end
 
   # GET /listings/1/edit
@@ -31,11 +36,11 @@ class ListingsController < ApplicationController
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @listing = @vendor.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
+        format.html { redirect_to vendor_listing_path(@vendor, @listing), notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
@@ -49,7 +54,7 @@ class ListingsController < ApplicationController
   def update
     respond_to do |format|
       if @listing.update(listing_params)
-        format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
+        format.html { redirect_to vendor_listing_path(@vendor, @listing), notice: 'Listing was successfully updated.' }
         format.json { render :show, status: :ok, location: @listing }
       else
         format.html { render :edit }
@@ -71,11 +76,11 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_vendor
-    @vendor = Vendor.find(params[:vendor_id])
+    @vendor = Vendor.find_by(id: params[:vendor_id])
   end
 
   def set_listing
-      @listing = Listing.find(params[:id])
+      @listing = Listing.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

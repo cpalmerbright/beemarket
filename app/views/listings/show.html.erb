@@ -2,7 +2,7 @@
 
 <p>
   <strong>Vendor:</strong>
-  <%= @listing.vendor %>
+  <%= @listing.vendor.name %>
 </p>
 
 <p>
@@ -15,5 +15,5 @@
   <%= @listing.species %>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%= link_to 'Edit', edit_vendor_listing_path(@vendor, @listing) %> |
+<%= link_to 'Back', vendor_listings_path(@vendor) %>
