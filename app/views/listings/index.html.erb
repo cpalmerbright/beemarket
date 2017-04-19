@@ -18,9 +18,9 @@
         <td><%= listing.vendor.name  %></td>
         <td><%= listing.quantity %></td>
         <td><%= listing.species %></td>
-        <td><%= link_to 'Show', vendor_listing_path(listing.vendor, listing) %></td>
-        <td><%= link_to 'Edit', edit_vendor_listing_path(listing.vendor, listing) %></td>
-        <td><%= link_to 'Destroy', vendor_listing_path(listing.vendor, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', vendor_listing_path(listing.vendor_id, listing) %></td>
+        <td><%= link_to 'Edit', edit_vendor_listing_path(listing.vendor_id, listing) %></td>
+        <td><%= button_to 'Destroy', vendor_listing_path(listing.vendor_id, listing), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

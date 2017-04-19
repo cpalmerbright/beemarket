@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :set_vendor
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   # GET /listings
   # GET /listings.json
@@ -11,17 +11,17 @@ class ListingsController < ApplicationController
   # end
 
   def index
-    if @vendor.nil?
+    if @vendor
       @listings = Listing.all
     else
       @listings = @vendor.listings
     end
-
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
+
   end
 
   # GET /listings/new
@@ -80,7 +80,7 @@ class ListingsController < ApplicationController
   end
 
   def set_listing
-      @listing = Listing.find_by(id: params[:id])
+      @listing = @vendor.listings.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
