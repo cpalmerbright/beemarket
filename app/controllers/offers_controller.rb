@@ -1,17 +1,24 @@
 class OffersController < ApplicationController
   before_action :set_buyer
   before_action :set_vendor
+  before_action :set_listing
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   # GET /offers
   # GET /offers.json
   def index
-    if "vendors/id/listings/id/offers"
-      "show offers for the given listing"
-    elsif "vendors/id/offers"
-      "Show ALL offers for all listings of that vendor"
-    elsif "buyers/id/offers"
-      "show offers for the given buyer"
+    if @buyer
+      @offers = Offer.where(buyer_id: @buyer.id)
+    elsif @listing
+      @offers = Offer.where(listing_id: @listing.id)
+    else
+      @offers = []
+      Offer.all.each do |offer|
+        if offer.listing.vendor == @vendor
+          @offers << offer
+        end
+      end
+      @offers
     end
   end
 
@@ -86,6 +93,7 @@ class OffersController < ApplicationController
     def set_listing
       @listing = Listing.find_by(id: params[:listing_id])
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
       params.require(:offer).permit(:buyer_id, :listing_id, :amount, :accepted)

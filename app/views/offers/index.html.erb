@@ -5,7 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Buyer</th>
+      <% if @buyer %>
+          <th>Vendor</th>
+      <% end %>
+      <% unless @buyer %>
+        <th>Buyer</th>
+      <% end %>
       <th>Listing</th>
       <th>Amount</th>
       <th>Accepted</th>
@@ -16,7 +21,12 @@
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.buyer.name %></td>
+        <% if @buyer %>
+            <td><%= offer.vendor.name %></td>
+      <% end %>
+        <% unless @buyer %>
+            <td><%= offer.buyer.name %></td>
+      <% end %>
         <td><%= offer.listing.quantity.to_s + " " + offer.listing.species %></td>
         <td><%= offer.amount %></td>
         <td><%= offer.accepted ? "Yes" : "No" %></td>
@@ -29,5 +39,3 @@
 </table>
 
 <br>
-
-<!-- <%= link_to 'New Offer', new_buyer_offer_path() %> -->

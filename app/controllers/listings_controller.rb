@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_vendor
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_offers, only: :show
   # GET /listings
   # GET /listings.json
 
@@ -16,7 +16,6 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    set_offers
   end
 
   # GET /listings/new
@@ -87,6 +86,7 @@ class ListingsController < ApplicationController
   def set_offers
     @offers = Offer.where(listing_id: @listing.id)
   end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:vendor_id, :quantity, :species, buyer_ids: [])

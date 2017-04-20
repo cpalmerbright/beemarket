@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   resources :listings, only: :index
   resources :vendors do
-    resources :offers, except: [:destroy, :new, :create], controller: 'vendors/offers'
+    resources :offers, except: [:destroy, :new, :create]
     resources :listings do
       resources :offers, only: [:index, :show]
     end
