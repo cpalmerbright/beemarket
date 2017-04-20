@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buyer.name %>
+</p>
+<%= link_to 'View Offers', buyer_offers_path(@buyer, @offer) %> |
+<%= link_to 'New Offer', new_buyer_offer_path(@buyer) %> |
+<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
+<%= link_to 'Back', buyers_path %>

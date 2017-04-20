@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buyer: one
+  listing: one
+  amount: 1
+  accepted: false
+
+two:
+  buyer: two
+  listing: two
+  amount: 1
+  accepted: false
