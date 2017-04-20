@@ -19,7 +19,7 @@
         <td><%= offer.buyer.name %></td>
         <td><%= offer.listing.quantity.to_s + " " + offer.listing.species %></td>
         <td><%= offer.amount %></td>
-        <td><%= offer.accepted %></td>
+        <td><%= offer.accepted ? "Yes" : "No" %></td>
         <td><%= link_to 'Show', buyer_offer_path(offer.buyer_id, offer) %></td>
         <td><%= link_to 'Edit', edit_buyer_offer_path(offer.buyer_id, offer) %></td>
         <td><%= link_to 'Destroy', buyer_offer_path(offer.buyer_id, offer), method: :delete, data: { confirm: 'Are you sure?' } %></td>

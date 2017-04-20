@@ -17,7 +17,7 @@
 
 <p>
   <strong>Accepted:</strong>
-  <%= @offer.accepted %>
+  <%= @offer.accepted ? "Yes" : "No" %>
 </p>
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
