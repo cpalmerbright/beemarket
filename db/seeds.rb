@@ -8,9 +8,14 @@
 
 Vendor.delete_all
 Listing.delete_all
+Buyer.delete_all
 
 
-fred = Vendor.new(name: "Fred")
-bob = Vendor.new(name: "Bob")
+fred = Vendor.create(name: "Fred")
+bob = Vendor.create(name: "Bob")
 
 fred.listings.create(species: "European Honey Bee", quantity: 10)
+
+lucy = Buyer.create(name: "Lucy")
+elliot = Buyer.create(name: "Elliot")
+tim = Buyer.create(name: "Tim")

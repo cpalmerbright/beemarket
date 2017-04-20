@@ -15,5 +15,14 @@
   <%= @listing.species %>
 </p>
 
+<p>
+  <strong>Potential buyers:</strong>
+  <ul>
+    <% @listing.buyers.each do |buyer| %>
+        <li><%= buyer.name %> </li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_vendor_listing_path(@vendor, @listing) %> |
 <%= link_to 'Back', vendor_listings_path(@vendor) %>

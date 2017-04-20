@@ -25,6 +25,15 @@
     <%= f.text_field :species %>
   </div>
 
+  <div class="field">
+    <% hidden_field_tag "listing[buyer_ids][]", nil %>
+    <% Buyer.all.each do |buyer| %>
+      <%= check_box_tag "listing[buyer_ids][]", buyer.id,
+        listing.buyer_ids.include?(buyer.id), id: dom_id(buyer) %>
+      <%= label_tag dom_id(buyer), buyer.name %> <br>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

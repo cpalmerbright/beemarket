@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :offers
+  resources :buyers
   resources :listings, only: :index
   resources :vendors do
     resources :listings
