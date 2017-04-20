@@ -42,7 +42,7 @@
         <tr>
           <td><%= offer.buyer.name %></td>
           <td><%= offer.amount %></td>
-          <td><%= offer.accepted %></td>
+          <td><%= offer.accepted ? "Yes" : "No" %></td>
         </tr>
       <% end %>
     </tbody>
