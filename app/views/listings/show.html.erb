@@ -24,5 +24,32 @@
   </ul>
 </p>
 
+<p>
+  <strong>Offers:</strong>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Buyer</th>
+        <th>Amount</th>
+        <th>Accepted</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @offers.each do |offer| %>
+        <tr>
+          <td><%= offer.buyer.name %></td>
+          <td><%= offer.amount %></td>
+          <td><%= offer.accepted %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+
+
 <%= link_to 'Edit', edit_vendor_listing_path(@vendor, @listing) %> |
 <%= link_to 'Back', vendor_listings_path(@vendor) %>

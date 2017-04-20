@@ -25,3 +25,4 @@ tim = Buyer.create(name: "Tim")
 
 x = Offer.create(buyer: lucy, listing: a, amount: 500)
 y = Offer.create(buyer: tim, listing: b, amount: 20)
+z = Offer.create(buyer: elliot, listing:a, amount: 400)

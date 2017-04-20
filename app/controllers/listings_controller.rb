@@ -16,7 +16,7 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-
+    set_offers
   end
 
   # GET /listings/new
@@ -72,13 +72,21 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_vendor
+    p "In set vendor"
+    p params[:vendor_id]
     @vendor = Vendor.find_by(id: params[:vendor_id])
+    p "After vendor set"
+    p @vendor
   end
 
   def set_listing
+    p "In set listing"
       @listing = @vendor.listings.find(params[:id])
-    end
+  end
 
+  def set_offers
+    @offers = Offer.where(listing_id: @listing.id)
+  end
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:vendor_id, :quantity, :species, buyer_ids: [])
