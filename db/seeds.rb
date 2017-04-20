@@ -9,6 +9,7 @@
 Vendor.delete_all
 Listing.delete_all
 Buyer.delete_all
+Offer.delete_all
 
 
 fred = Vendor.create(name: "Fred")

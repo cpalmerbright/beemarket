@@ -5,11 +5,6 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
 
-
-  # def new
-  #   @listing = @vendor.listings.build
-  # end
-
   def index
     if @vendor
       @listings = Listing.all
