@@ -15,8 +15,13 @@ Offer.delete_all
 fred = Vendor.create(name: "Fred")
 bob = Vendor.create(name: "Bob")
 
-fred.listings.create(species: "European Honey Bee", quantity: 10)
+a = fred.listings.create(species: "European Honey Bee", quantity: 10)
+b = bob.listings.create(species: "Hornets", quantity: 1000)
+
 
 lucy = Buyer.create(name: "Lucy")
 elliot = Buyer.create(name: "Elliot")
 tim = Buyer.create(name: "Tim")
+
+x = Offer.create(buyer: lucy, listing: a, amount: 500)
+y = Offer.create(buyer: tim, listing: b, amount: 20)

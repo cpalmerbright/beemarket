@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170419234852) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer  "vendor_id"
+    t.integer  "vendor_id",  null: false
     t.integer  "quantity"
     t.string   "species"
     t.datetime "created_at", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20170419234852) do
   end
 
   create_table "vendors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

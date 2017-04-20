@@ -6,7 +6,7 @@ class ListingsController < ApplicationController
   # GET /listings.json
 
   def index
-    if @vendor
+    if @vendor.nil?
       @listings = Listing.all
     else
       @listings = @vendor.listings

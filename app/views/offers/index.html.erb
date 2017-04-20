@@ -16,8 +16,8 @@
   <tbody>
     <% @offers.each do |offer| %>
       <tr>
-        <td><%= offer.buyer %></td>
-        <td><%= offer.listing %></td>
+        <td><%= offer.buyer.name %></td>
+        <td><%= offer.listing.quantity.to_s + " " + offer.listing.species %></td>
         <td><%= offer.amount %></td>
         <td><%= offer.accepted %></td>
         <td><%= link_to 'Show', buyer_offer_path(offer.buyer_id, offer) %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Offer', new_buyer_offer_path() %>
+<!-- <%= link_to 'New Offer', new_buyer_offer_path() %> -->
