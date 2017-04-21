@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
   def index
     if @vendor.nil?
       @listings = Listing.all
+
     else
       @listings = @vendor.listings
     end
