@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6ea36b8b-f472-41f3-81fd-42bea43b33d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/listings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/listing.rb" afterPath="$PROJECT_DIR$/app/models/listing.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/index.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listings/show.html.erb" afterPath="$PROJECT_DIR$/app/views/listings/show.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -32,8 +32,8 @@
       <file leaf-file-name="listing.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="315">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,27 +42,27 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/listings/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/listings/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            <state relative-caret-position="315">
+              <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listings_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="listings_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
+            <state relative-caret-position="135">
               <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
@@ -103,7 +103,6 @@
         <option value="$PROJECT_DIR$/app/views/vendors/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/listings/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/listings/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/listings/index.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20170418000529_create_vendors.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170418000919_create_listings.rb" />
         <option value="$PROJECT_DIR$/app/models/buyer.rb" />
@@ -120,9 +119,10 @@
         <option value="$PROJECT_DIR$/app/models/offer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/offers_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/offers/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/listings/show.html.erb" />
         <option value="$PROJECT_DIR$/app/models/listing.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/listings_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/listings/index.html.erb" />
       </list>
     </option>
   </component>
@@ -675,7 +675,7 @@
       <workItem from="1492474249088" duration="4158000" />
       <workItem from="1492479529303" duration="8691000" />
       <workItem from="1492639838213" duration="18923000" />
-      <workItem from="1492743519906" duration="2150000" />
+      <workItem from="1492743519906" duration="2562000" />
     </task>
     <task id="LOCAL-00001" summary="Nested routes fixed">
       <created>1492510070903</created>
@@ -726,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492682528275</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added expired and time_remaining methods to Listing model">
+      <created>1492746677956</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1492746677956</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -762,7 +769,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33922000" />
+    <option name="totallyTimeSpent" value="34334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -799,7 +806,8 @@
     <MESSAGE value="Nesting routes for offers" />
     <MESSAGE value="Added (not working) vendors/offers controller." />
     <MESSAGE value="Can view offers for vendor, listing or buyer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Can view offers for vendor, listing or buyer" />
+    <MESSAGE value="Added expired and time_remaining methods to Listing model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added expired and time_remaining methods to Listing model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1153,34 +1161,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/listings/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/listings/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/listing.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/listings_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/listings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        <state relative-caret-position="315">
+          <caret line="21" column="80" lean-forward="false" selection-start-line="21" selection-start-column="80" selection-end-line="21" selection-end-column="80" />
           <folding />
         </state>
       </provider>

@@ -1,3 +1,6 @@
+require 'action_view'
+include ActionView::Helpers::DateHelper
+
 class Listing < ApplicationRecord
   belongs_to :vendor
   has_many :offers
