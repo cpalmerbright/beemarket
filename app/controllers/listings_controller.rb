@@ -7,8 +7,9 @@ class ListingsController < ApplicationController
 
   def index
     if @vendor.nil?
-      @listings = Listing.all
-
+      @current_listings = Listing.where(:created_at => (Date.today - 7.days)..Date.today).order('created_at asc')
+      @expired_listings = Listing.where.not(:created_at => (Date.today - 7.days)..Date.today)
+      @listings = @current_listings + @expired_listings
     else
       @listings = @vendor.listings
     end
