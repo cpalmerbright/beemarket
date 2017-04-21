@@ -8,17 +8,13 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     if @buyer
-      @offers = Offer.where(buyer_id: @buyer.id)
+      @offers = @buyer.offers
     elsif @listing
-      @offers = Offer.where(listing_id: @listing.id)
+      @offers = @listing.offers
+    elsif @vendor
+      @offers = @vendor.offers
     else
-      @offers = []
-      Offer.all.each do |offer|
-        if offer.listing.vendor == @vendor
-          @offers << offer
-        end
-      end
-      @offers
+      @offers = Offer.all
     end
   end
 
