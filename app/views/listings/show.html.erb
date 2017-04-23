@@ -39,23 +39,26 @@
         <th>Buyer</th>
         <th>Amount</th>
         <th>Accepted</th>
-        <th colspan="3"></th>
+        <% unless @listing.has_accepted_offer? %>
+          <th>Accept</th>
+        <% end %>
       </tr>
     </thead>
-
     <tbody>
-      <% @offers.each do |offer| %>
+      <% @listing.offers.each do |offer| %>
         <tr>
           <td><%= offer.buyer.name %></td>
           <td><%= offer.amount %></td>
-          <td><%= offer.accepted ? "Yes" : "No" %></td>
+          <td><%= offer.accepted ? 'Yes' : 'No' %></td>
+          <% unless @listing.has_accepted_offer? %>
+            <td>
+              <%= link_to 'Accept', vendor_offer_path(offer.vendor, offer, { 'offer[accepted]'=> true}), method: :put, data: { confirm: 'Are you sure you want to accept this offer?'} %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
-
-
-
 
 <%= link_to 'Edit', edit_vendor_listing_path(@vendor, @listing) %> |
 <%= link_to 'Back', vendor_listings_path(@vendor) %>

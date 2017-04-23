@@ -7,6 +7,10 @@ class Listing < ApplicationRecord
   has_many :buyers, through: :offers
   validates :quantity, presence: true, :numericality =>  {:greater_than => 0}
 
+  def has_accepted_offer?
+    offers.where(accepted: true).exists?
+  end
+
   def expired?
     time_elapsed >= 7*24*60*60
   end
