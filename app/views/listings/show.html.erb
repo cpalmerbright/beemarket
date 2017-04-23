@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% if @listing.expired? %>
+  <h4>This listing has expired. No more offers can be made.</h4>
+<% else %>
+  <h4> Time remaining: <%= @listing.time_remaining %> </h4>
+<% end %>
+
 <p>
   <strong>Vendor:</strong>
   <%= @listing.vendor.name %>
