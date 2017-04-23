@@ -6,9 +6,8 @@
   <thead>
     <tr>
       <% if @buyer %>
-          <th>Vendor</th>
-      <% end %>
-      <% unless @buyer %>
+        <th>Vendor</th>
+      <% else %>
         <th>Buyer</th>
       <% end %>
       <th>Listing</th>
@@ -22,10 +21,9 @@
     <% @offers.each do |offer| %>
       <tr>
         <% if @buyer %>
-            <td><%= offer.vendor.name %></td>
-      <% end %>
-        <% unless @buyer %>
-            <td><%= offer.buyer.name %></td>
+          <td><%= offer.vendor.name %></td>
+      <% else %>
+          <td><%= offer.buyer.name %></td>
       <% end %>
         <td><%= offer.listing.quantity.to_s + " " + offer.listing.species %></td>
         <td><%= offer.amount %></td>
